@@ -485,7 +485,10 @@ helm -n $NAMESPACE uninstall $RELEASE_NAME
 | --------------------------- | -------------------------------------------------------------------------------------------- | ------------- |
 | `domain`                    | Domain name where the application is accessed                                                | `""`          |
 | `sendsAllowed`              | Controls whether users are allowed to create Bitwarden Sends.                                | `true`        |
-| `hibpApiKey`                | HaveIBeenPwned API Key                                                                       | `""`          |
+| `hibpApiKey`                | HaveIBeenPwned API Key (legacy). Prefer `hibp.value` or `hibp.existingSecret`.             | `""`          |
+| `hibp.existingSecret`       | Name of an existing secret containing the HaveIBeenPwned API key. Also set hibp.existingSecretKey. | `""`    |
+| `hibp.existingSecretKey`    | When using an existing secret, specify the key which contains the API key.                   | `""`          |
+| `hibp.value`                | HaveIBeenPwned API Key plain text                                                            | `""`          |
 | `orgAttachmentLimit`        | Max Kilobytes of attachment storage allowed per organization.                                | `""`          |
 | `userAttachmentLimit`       | Max kilobytes of attachment storage allowed per user.                                        | `""`          |
 | `userSendLimit`             | Max kilobytes of send storage allowed per user.                                              | `""`          |
